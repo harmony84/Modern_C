@@ -1,6 +1,7 @@
 #include <string>
 #include <memory>
 #include <vector>
+#include "PimplHeader.h"
 
 class Investment
 {
@@ -146,6 +147,13 @@ int main()
 	{
 		printf("This pointer expired.\n");
 	}
+
+	
+	//////////////////////////////////////////////////////////////////////////
+	// Pimpl
+	auto pimpl_widget_1 = std::make_shared<Widget>();
+	auto pimpl_widget_2{ std::move( pimpl_widget_1 ) };
+	pimpl_widget_1 = std::move( pimpl_widget_2 );
 
 	return 0;
 }
