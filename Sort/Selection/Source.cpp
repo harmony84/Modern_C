@@ -5,10 +5,8 @@
 // swap count = N   
 // selection sort = O(N2)
 template<typename T>
-void SelectionSort(T& target, bool order)
+void SelectionSort(T& target, size_t count, bool order)
 {
-	size_t count = strlen(target);
-
 	for ( size_t i = 0; i < count - 1; ++i )
 	{
 		int target_value = target[ i ];
@@ -45,7 +43,7 @@ int main()
 {
 #pragma region "Selection Sort"
 	char word[] = { "TOLEARNSORTALGORITHM" };
-	SelectionSort( word, true );
+	SelectionSort( word, strlen(word), true );
 #pragma endregion
 	return 0;
 }
