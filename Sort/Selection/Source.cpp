@@ -4,7 +4,8 @@
 // compare count = N2/2
 // swap count = N   
 // selection sort = O(N2)
-void SelectionSort(char* target, size_t count, bool order)
+template<typename T>
+void SelectionSort(T& target, size_t count, bool order)
 {
 	for ( size_t i = 0; i < count - 1; ++i )
 	{
