@@ -115,8 +115,8 @@ int main()
 	std::vector<std::shared_ptr<Investment>> vec_shared_investment { investment_shared_customdeleter_1, investment_shared_customdeleter_2 };		// ok
 
 
-	//std::unique_ptr<Investment> investment_unique_customdeleter_1{ new Investment( "unique_customdeleter_1" ), custom_deleter_1 };
-	//std::unique_ptr<Investment> investment_unique_customdeleter_2{ new Investment( "unique_customdeleter_2" ), custom_deleter_2 };
+	//std::unique_ptr<Investment, decltype( custom_deleter_1)> investment_unique_customdeleter_1{ new Investment( "unique_customdeleter_1" ), custom_deleter_1 };
+	//std::unique_ptr<Investment, void(*)(Investment*)> investment_unique_customdeleter_2{ new Investment( "unique_customdeleter_2" ), custom_deleter_2 };
 
 	//std::vector<std::unique_ptr<Investment>> vec_unique_investment{ investment_unique_customdeleter_1, investment_unique_customdeleter_2 };		// comfile error
 
