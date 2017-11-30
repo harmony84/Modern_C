@@ -7,7 +7,7 @@
  // insertion sort = O(N^2)
 void InsertionSort( char* target, size_t count )
 {
-	for ( size_t i = 1; i < count - 1; ++i )
+	for ( size_t i = 1; i < count; ++i )
 	{
 		for (size_t j = i; j > 0; --j)
 		{
@@ -30,7 +30,7 @@ void InsertionSort( char* target, size_t count )
 int main()
 {
 #pragma region "Insertion Sort"
-	char word[] = { "TOLEARNSORTALGORITHM" };
+	char word[] = { "TOLEARNSORTALGORITHMK" };
 	InsertionSort( word, strlen(word) );
 
 	printf( "%s\n", word );
