@@ -10,7 +10,7 @@ void ShellSort( char* target, size_t count )
 	{
 		for ( size_t row = 0; row < col; ++row )
 		{
-			for ( size_t i = col; i < count - col; i += col )
+			for ( size_t i = col; i < count; i += col )
 			{
 				for ( size_t j = i; j > 0; j -= col )
 				{
