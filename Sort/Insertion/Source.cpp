@@ -7,9 +7,9 @@
  // insertion sort = O(N^2)
 void InsertionSort( char* target, size_t count )
 {
-	for ( size_t i = 0; i < count - 1; ++i )
+	for ( size_t i = 1; i < count - 1; ++i )
 	{
-		for (size_t j = i+1; j > 0; --j)
+		for (size_t j = i; j > 0; --j)
 		{
 			if ( target[ j - 1 ] > target[ j ] )
 			{
