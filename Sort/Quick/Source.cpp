@@ -1,11 +1,15 @@
-#include <iostream>
+﻿#include <iostream>
 #include <memory>
 
 #pragma region "Quick Sort"  
-// quick sort = O(N log n),  worst = N^2
+// Quick sort = O(N log n),  worst = N^2
+// 평균적인 상황에서 최고의 성능을 보여줌
+// 기준을 잡고 작은것을 앞으로 큰것을 뒤로 빼는 방식 피벗을 잘못 잡을 경우 n^2의 속도까지 나오게 된다.
+
 void QuickSort( char* target, size_t left_index, size_t right_index )
 {
-	char pivot = target[ static_cast< size_t >( ( left_index + right_index ) * 0.5f ) ];
+	char pivot = target[ ( left_index + right_index ) >> 1 ];
+
 	size_t left = left_index;
 	size_t right = right_index;
 
@@ -48,8 +52,10 @@ void QuickSort( char* target, size_t left_index, size_t right_index )
 int main()
 {
 #pragma region "Quick Sort"
-	//char word[] = { "TOLEARNSORTALGORITHMK" };
-	char word[] = { "51423" };
+	char word[] = { "TOLEARNSORTALGORITHMK" };
+	
+	printf( "%s\n", word );
+
 	QuickSort( word, 0, strlen( word ) - 1 );
 
 	printf( "%s\n", word );

@@ -1,20 +1,19 @@
-#include <iostream>
+﻿#include <iostream>
 
 #pragma region "Bubble Sort"  
-// compare count = N*(N-1)/2
-// swap count = N   
-// bubble sort = O(N2)
+// Bubble sort = O(N^2)
+// 거의 모든 상황에서 최악의 성능을 보여준다.  간단한 로직
 void BubbleSort( char* target, size_t count )
 {
-	for ( size_t i = 0; i < count; ++i )
+	for ( size_t i = 0; i < count - 1; ++i )
 	{
-		for ( size_t j = 0; j < count - 1; ++j )
+		for ( size_t j = 1; j < count - i; ++j )
 		{
-			if ( target[ j ] > target[ j + 1 ] )
+			if ( target[ j - 1 ] > target[ j ] )
 			{
 				char temp = target[ j ];
-				target[ j ] = target[ j + 1 ];
-				target[ j + 1 ] = temp;
+				target[ j ] = target[ j - 1 ];
+				target[ j - 1 ] = temp;
 			}
 		}
 	}
@@ -25,7 +24,10 @@ void BubbleSort( char* target, size_t count )
 int main()
 {
 #pragma region "Bubble Sort"
-	char word[] = { "TOLEARNSORTALGORITHM" };
+	char word[] = { "TOLEARNSORTALGORITHMK" };
+
+	printf( "%s\n", word );
+
 	BubbleSort( word, strlen( word ) );
 	
 	printf( "%s\n", word );
